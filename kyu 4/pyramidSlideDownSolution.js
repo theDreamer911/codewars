@@ -18,15 +18,15 @@
 function longestSlideDown(pyramid) {
   let pyramidSum = [];
   pyramid.forEach((elem, index) => {
-    // console.log(`${elem}nya dan indexnya ${index}`);
+    // console.log(`this is: ${elem}, and this is: ${index}`);
     pyramidSum.push(
-      elem.map((elem) => {
-        return index === pyramid.length - 1 ? elem : 0;
+      elem.map((e) => {
+        return index === pyramid.length - 1 ? e : 0;
       })
     );
   });
+  // console.log(`This is the array: ${pyramidSum}`);
 
-  // console.log(`This is the array of ${pyramidSum}`);
   for (let i = pyramidSum.length - 2; i >= 0; i--) {
     for (let j = 0; j < pyramidSum[i].length; j++) {
       pyramidSum[i][j] =
