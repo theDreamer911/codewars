@@ -1,6 +1,6 @@
 function lifePathNumber(dateOfBirth) {
-  arr = dateOfBirth.split("-");
-  sum = [];
+  let arr = dateOfBirth.split("-");
+  let sum = [];
   const reducer = (accumulator, currentValue) => accumulator + currentValue;
   for (i = 0; i < arr.length; i++) {
     for (j = 0; j <= arr[i].length; j++) {
@@ -11,10 +11,10 @@ function lifePathNumber(dateOfBirth) {
       }
     }
   }
-  sums = sum.reduce(reducer);
-  checker = sums.toString();
+  let sums = sum.reduce(reducer);
+  let checker = sums.toString();
 
-  newSum = [];
+  let newSum = [];
   if (checker.length > 1) {
     for (i = 0; i < checker.length; i++) {
       newSum.push(parseInt(checker[i]));
@@ -22,10 +22,10 @@ function lifePathNumber(dateOfBirth) {
   } else {
     return parseInt(checker);
   }
-  newSums = newSum.reduce(reducer);
-  newChecker = newSums.toString();
+  let newSums = newSum.reduce(reducer);
+  let newChecker = newSums.toString();
 
-  lastSum = [];
+  let lastSum = [];
   if (newChecker > 1) {
     for (i = 0; i < newChecker.length; i++) {
       lastSum.push(parseInt(newChecker[i]));
