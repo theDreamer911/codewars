@@ -73,26 +73,31 @@ function HEX2BIN(number, places) {
 
 console.log(HEX2BIN("00F"));
 
-function bin2hex(s) {
-  //  discuss at: https://locutus.io/php/bin2hex/
-  // original by: Kevin van Zonneveld (https://kvz.io)
-  // bugfixed by: Onno Marsman (https://twitter.com/onnomarsman)
-  // bugfixed by: Linuxworld
-  // improved by: ntoniazzi (https://locutus.io/php/bin2hex:361#comment_177616)
-  //   example 1: bin2hex('Kev')
-  //   returns 1: '4b6576'
-  //   example 2: bin2hex(String.fromCharCode(0x00))
-  //   returns 2: '00'
-  let i;
-  let l;
-  let o = "";
-  let n;
-  s += "";
-  for (i = 0, l = s.length; i < l; i++) {
-    n = s.charCodeAt(i).toString(16);
-    o += n.length < 2 ? "0" + n : n;
+// function bin2hex(str) {
+//   var result = "";
+//   var alphabet = "0123456789ABCDEF";
+//   var mask = 15; //0000 1111 binary
+
+//   for (var i = 0; i < str.length; i++) {
+//     var index1 = str[i] & mask;
+//     var index2 = (str[i] >> 4) & mask;
+//     result += alphabet[index2] + alphabet[index1] + "-";
+//   }
+//   result = result.substring(0, result.length - 1);
+//   return result;
+// }
+function bin2hex(str) {
+  var result = "";
+
+  for (var i = 0; i < str.length; i++) {
+    var hex = str[i].toString(16);
+    if (hex.length == 1) {
+      hex = "0" + hex;
+    }
+    result += hex + "-";
   }
-  return o;
+  result = result.substring(0, result.length - 1);
+  return result;
 }
 
-console.log(bin2hex("1111"));
+console.log(bin2hex("FA"));
