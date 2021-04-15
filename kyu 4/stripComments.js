@@ -3,3 +3,4 @@ const stripComments = (s) => {
   let re2 = "/s*[#;].+$/g";
   return s.replace(re1, "").replace(re2, "");
 };
+//still failed
